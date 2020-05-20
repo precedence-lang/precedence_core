@@ -1,6 +1,5 @@
 #include "lexer.h"
 
-#include <iostream>
 #include <sstream>
 #include <stack>
 
@@ -190,9 +189,13 @@ void Lexer::lex(std::istream& in){
 					break;
 				case 14:
 				case 15:
+					//TODO add raw reading capability
+					LOG_ERRR("Implementation Not Found (INF)");
+					/*
 					jump.addr_loc = Jump_addr_loc_t::code;
 					jump.mode = (jump_data == 14) ? Jump_mode_t::relative : Jump_mode_t::absolute;
 					LOG_TRAC("Reading {} jump {} addr from code", (jump.type == Jump_type_t::comefrom) ? "comefrom" : "goto", (jump.mode == Jump_mode_t::relative) ? "relative" : "absolute");
+					*/
 					break;
 				default:
 					jump.mode = Jump_mode_t::relative;
